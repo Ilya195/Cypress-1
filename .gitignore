@@ -1,0 +1,14 @@
+Thumbs.db
+.DS_Store
+tmp/
+*_old.*
+*_backup.*
+*.*_old
+*_old
+*_backup
+*.*_backup
+!.vscode
+node_modules/
+cypress_old/
+cypress/screenshots/
+cypress/videos/
