@@ -1,26 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  
-  component: {
-    devServer: {
-      framework: "react",
-      bundler: "webpack",
-      webpackConfig: require("./webpack.config"),
-    },
-    
-  },
-
   e2e: {
     baseUrl: "http://localhost:3000/",
     setupNodeEvents(on, config) {
-      
     },
+    viewportWidth: 1920,
+    viewportHeight: 1080,
   },
-  
-  "retries":{
-    "runMode": 2,
-    "openMode": 0,
-  }
-  
 });

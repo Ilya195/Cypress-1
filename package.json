@@ -1,16 +1,21 @@
 {
-  "dependencies": {
-    "cypress": "^12.7.0"
-  },
-  "name": "cupress-1",
+  "name": "cypress",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open --config-file",
+    "test:cypress": "cypress open --browser chrome",
+    "test:allHeaded": "cypress run --browser chrome --headed --config-file cypress.desktop.env.js",
+    "test:allHeadless": "npx cypress run --headless -b chrome",
+    "test:allHeadedChrome": "npx cypress run --browser chrome --headed --config-file cypress.mobile.env.js",
+    "test:spec": "cypress run --headed --browser chrome --spec cypress/e2e/login.cy.js"
   },
-  "keywords": [],
+  
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "cypress": "^10.11.0",
+    "jest": "^29.5.0"
+  }
 }
