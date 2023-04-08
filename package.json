@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open --config-file",
-    "test:cypress": "cypress open --browser chrome",
-    "test:allHeaded": "cypress run --browser chrome --headed --config-file cypress.desktop.env.js",
-    "test:allHeadless": "npx cypress run --headless -b chrome",
-    "test:allHeadedChrome": "npx cypress run --browser chrome --headed --config-file cypress.mobile.env.js",
-    "test:spec": "cypress run --headed --browser chrome --spec cypress/e2e/login.cy.js"
+    "cypress:go" : "npx cypress open --config-file desktop.env.config.js",
+    "cypress:mobile" : "npx cypress open --config-file mobile.env.config.js",
+    "cypress:desk:chrome:on" : "npx cypress run --browser=chrome --headed --config-file desktop.env.config.js",
+    "cypress:mobile:chrome:off" : "npx cypress run --browser=chrome --headless --config-file mobile.env.config.js",
+    "cypress:desk:electron:off" : "npx cypress run --browser=electron --headless --config-file desktop.env.config.js",
+    "cypress:desk:electron:on" : "npx cypress run --browser=electron --headed --config-file desktop.env.config.js"
   },
   
   "author": "",

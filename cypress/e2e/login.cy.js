@@ -33,8 +33,11 @@ describe('Test three functions favorites', () => {
       });
 
   it('Should add book to favorites', () => {
-    cy.addToFavorite("Дракула", "Роман","Брем Стокер");
-    cy.contains('Add to favorite').click();
+    cy.addToFavorite(
+     "Дракула",
+     "Роман",
+     "Брем Стокер"
+  );
     cy.contains('Favorites').click();
     cy.contains("Дракула").should("be.visible");
   })
@@ -45,18 +48,16 @@ describe('Test three functions favorites', () => {
     cy.get('.card-body > card-title h5').should('not.exist');
   })
     
-      // it('Should have download book button from favorites', () => {
-
-      //   cy.contains('Add to favorite').click();
-      //   cy.addBook(
-      //         "Властелин колец",
-      //         "Роман-эпопея",
-      //         "Дж. Р. Р. Толкин"
-      //   );     
-      //   cy.contains('Favorites').click();
-      //   cy.get('.card-body > card-title h5').should("be.visible").click();
-      //   cy.contains('Dowload book').should('exist');
-      // })
+  it('Should have download book button from favorites', () => {
+    cy.addToFavorite(
+      "Властелин колец",
+      "Роман-эпопея",
+      "Дж. Р. Р. Толкин"
+  );       
+    cy.contains('Favorites').click();
+    cy.contains('Властелин колец').click();
+    cy.contains('Dowload book').should('exist');
+  })
     
   it('restart test', () => {
     cy.contains('Delete from favorite').click();
